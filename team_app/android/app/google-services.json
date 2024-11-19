@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313410943283",
+    "project_id": "reserve-e086b",
+    "storage_bucket": "reserve-e086b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313410943283:android:72dfdf7ecfb4d786b96646",
+        "android_client_info": {
+          "package_name": "com.team_app.team_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZSCE7xzklfcvQ7dPuEqpj-a3jyH-csB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

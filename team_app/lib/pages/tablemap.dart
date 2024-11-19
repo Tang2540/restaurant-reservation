@@ -13,7 +13,7 @@ class TableMapPage extends StatefulWidget {
 class _TableMapPageState extends State<TableMapPage> {
   List<TableR> tables = List.empty();
   bool isLoading = false;
-  PostController controller = PostController(PostHttpService());
+  PostController controller = PostController(PostFirebaseService());
 
   @override
   void initState() {
@@ -47,14 +47,14 @@ class _TableMapPageState extends State<TableMapPage> {
             return GestureDetector(
               onTap: () {
                 final detail = context.read<TableModel>();
+                detail.addTableId(tables[index].id);
+                detail.addTableName(tables[index].name);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => TableDetailsPage(),
                   ),
                 );
-                detail.addID(tables[index].name);
-                detail.addDate(tables[index].date);
               },
               child: Container(
                 decoration: BoxDecoration(

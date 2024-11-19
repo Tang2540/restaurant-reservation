@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 
 class TableModel extends ChangeNotifier {
-  String _tableID = '';
   int _count = 1;
-  List _dates = [];
+  int _tableId = 0;
+  String _tableName = "";
+  List<dynamic> _dates = [];
 
-  String get tableID => _tableID;
   int get count => _count;
-  List get dates => _dates;
-  //String get date => _date;
-  void addID(item) {
-    _tableID = item;
-    notifyListeners();
-  }
-
-  void addDate(item) {
-    _dates = item;
-    notifyListeners();
-  }
+  int get tableId => _tableId;
+  String get tableName => _tableName;
+  List<dynamic> get dates => _dates;
 
   void increment() {
     _count++;
@@ -29,5 +21,26 @@ class TableModel extends ChangeNotifier {
       _count--;
       notifyListeners();
     }
+  }
+
+  void addTableId(int id) {
+    print('Setting tableId to: $id');
+    _tableId = id;
+    notifyListeners();
+  }
+
+  void addTableName(String name) {
+    _tableName = name;
+    notifyListeners();
+  }
+
+  void addDate(List<dynamic> newDates) {
+    _dates = newDates;
+    notifyListeners();
+  }
+
+  void clearDates() {
+    _dates.clear();
+    notifyListeners();
   }
 }
